@@ -22,39 +22,6 @@
     <a href="#" class="ham">
       <img src="./images/icon-menu.svg" alt="Open Menu">
     </a>
-    <div class="overlay">
-      <div class="mobile-nav">
-        <img src="./images/icon-close-menu.svg" alt="Close Menu">
-          <div class="mobile-nav-con">
-            <div class="dropdown">
-              <div class="dropbtn">
-                Feature <img src="./images/icon-arrow-up.svg" alt="Arrow Up">
-              </div>
-              <div class="dropdown-content">
-                <a href="#"><img src="./images/icon-todo.svg" alt="">TodoList</a>
-                <a href="#"><img src="./images/icon-calendar.svg" alt="">Calender</a>
-                <a href="#"><img src="./images/icon-reminders.svg" alt="">Reminders</a>
-                <a href="#"><img src="./images/icon-planning.svg" alt="">Planning</a>
-              </div>
-            </div>
-            <div class="dropdown">
-              <div class="dropbtn">
-                Company <img src="./images/icon-arrow-up.svg" alt="Arrow Up">
-              </div>
-              <div class="dropdown-content">
-                <a href="#">History</a>
-                <a href="#">Our Team</a>
-                <a href="#">Blog</a>
-              </div>
-            </div>
-
-            <a href="#">Careers</a>
-            <a href="#">About</a>
-          </div>
-        
-         
-      </div>
-    </div>
     
     <!--===== Desktop Navigation  =====-->
     <div class="nav-ul">
@@ -92,6 +59,39 @@
 
     </div>
   </nav>
+  <div class="overlay">
+    <div class="mobile-nav">
+      <img src="./images/icon-close-menu.svg" id="Close-Menu">
+        <div class="mobile-nav-con">
+          <div class="dropdown">
+            <div class="dropbtn">
+              Feature <img src="./images/icon-arrow-up.svg" alt="Arrow Up">
+            </div>
+            <div class="dropdown-content">
+              <a href="#"><img src="./images/icon-todo.svg" alt="">TodoList</a>
+              <a href="#"><img src="./images/icon-calendar.svg" alt="">Calender</a>
+              <a href="#"><img src="./images/icon-reminders.svg" alt="">Reminders</a>
+              <a href="#"><img src="./images/icon-planning.svg" alt="">Planning</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <div class="dropbtn">
+              Company <img src="./images/icon-arrow-up.svg" alt="Arrow Up">
+            </div>
+            <div class="dropdown-content">
+              <a href="#">History</a>
+              <a href="#">Our Team</a>
+              <a href="#">Blog</a>
+            </div>
+          </div>
+
+          <a href="#">Careers</a>
+          <a href="#">About</a>
+        </div>
+      
+       
+    </div>
+  </div>
 
   <!--===== Hero Section =====-->
   <div class="hero">
@@ -113,12 +113,20 @@
       <img src="./images/image-hero-desktop.png" id="hero-img">
     </div>
   </div>
+  
+  <script>
+    const ham = document.querySelector('.ham')
 
-
-
-
-
-
-  <script src="script.js"></script>
+    ham.addEventListener('click', e=> {
+      document.querySelector('.mobile-nav').classList.add('show')
+      document.querySelector('.overlay').style.display = 'block'
+      document.querySelector('body').classList.add('lock')  // to remove scroll when the Close-Menu icon appear
+    })
+    document.querySelector('#Close-Menu').addEventListener('click', e=> {
+      document.querySelector('.mobile-nav').classList.remove('show')
+      document.querySelector('.overlay').style.display = 'none'
+      document.querySelector('body').classList.remove('lock') // to remove scroll when the Close-Menu icon appear
+    })
+  </script>
 </body>
 </html>
