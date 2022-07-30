@@ -48,16 +48,15 @@
         </div>
       </div>
       
-    <a href="#">Careers</a>
-    <a href="#">About</a>
+      <a href="#">Careers</a>
+      <a href="#">About</a>
     </div>
     
     <div class="nav-btns">
       <button>Login</button>
       <button>Register</button>
     </div>
-
-  </div>
+    
   </nav>
 
   <div class="overlay">
@@ -86,15 +85,15 @@
             </div>
           </div>
 
-          <a href="#">Careers</a>
-          <a href="#">About</a>
+          <a href="#" class="mobile-nav-link">Careers</a>
+          <a href="#" class="mobile-nav-link">About</a>
         </div>
+
         <div class="mobile-nav-btns">
           <button>Login</button>
          <button>Register</button>
         </div>
        </div>
-    </div>
   </div>
 
   <!--===== Hero Section =====-->
@@ -113,6 +112,7 @@
         <img src="./images/client-meet.svg" alt="">
       </div>
     </div>
+
     <div class="img-container">
       <img src="./images/image-hero-desktop.png" id="hero-img">
     </div>
@@ -120,6 +120,7 @@
   
   <script>
     const ham = document.querySelector('.ham')
+    const mobileNavLink = document.querySelectorAll('.mobile-nav-link')
 
     ham.addEventListener('click', e=> {
       document.querySelector('.mobile-nav').classList.add('show')
@@ -131,6 +132,9 @@
       document.querySelector('.overlay').style.display = 'none'
       document.querySelector('body').classList.remove('lock') // to remove scroll when the Close-Menu icon appear
     })
+    mobileNavLink.forEach(n => n.addEventListener('click', () => {
+      document.querySelector('.overlay').style.display = 'none'
+    }))
   </script>
 </body>
 </html>
