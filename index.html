@@ -85,8 +85,8 @@
             </div>
           </div>
 
-          <a href="#">Careers</a>
-          <a href="#">About</a>
+          <a href="#" class="mobile-nav-link">Careers</a>
+          <a href="#" class="mobile-nav-link">About</a>
         </div>
 
         <div class="mobile-nav-btns">
@@ -120,6 +120,7 @@
   
   <script>
     const ham = document.querySelector('.ham')
+    const mobileNavLink = document.querySelectorAll('.mobile-nav-link')
 
     ham.addEventListener('click', e=> {
       document.querySelector('.mobile-nav').classList.add('show')
@@ -131,6 +132,9 @@
       document.querySelector('.overlay').style.display = 'none'
       document.querySelector('body').classList.remove('lock') // to remove scroll when the Close-Menu icon appear
     })
+    mobileNavLink.forEach(n => n.addEventListener('click', () => {
+      document.querySelector('.overlay').style.display = 'none'
+    }))
   </script>
 </body>
 </html>
